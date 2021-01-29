@@ -1,0 +1,133 @@
+import java.util.*;
+
+public class Configuration {
+	
+	public static class ConfigurationData {
+		private int interval;
+		private int duration;
+		private int departure;
+
+		public ConfigurationData() {
+		}
+
+		public int getDeparture() {
+			return departure;
+		}
+
+		public void setDeparture(int departure) {
+			this.departure = departure;
+		}
+
+		public int getDuration() {
+			return duration;
+		}
+
+		public void setDuration(int duration) {
+			this.duration = duration;
+		}
+
+		public int getInterval() {
+			return interval;
+		}
+
+		public void setInterval(int interval) {
+			this.interval = interval;
+		}
+	}
+
+	private ConfigurationData data = new ConfigurationData();
+
+	public void load(Properties props) throws ConfigurationException {
+		/*
+		int value = monitorInterval(props);
+		setInterval(value);
+
+		value = duration(props);
+		setDuration(value);
+
+		value = departure(props);
+		setDeparture(value);
+		*/
+	}
+
+	private int departure(Properties props, ConfigurationData data) throws ConfigurationException {
+		int value;
+		String valueString = props.getProperty("departure");
+		if (valueString == null) {
+			throw new ConfigurationException("departure offset");
+		}
+		value = Integer.parseInt(valueString);
+		if (value <= 0) {
+			throw new ConfigurationException("departure > 0");
+		}
+		if ((value % getInterval()) != 0) {
+			throw new ConfigurationException("departure % interval");
+		}
+		return value;
+		
+	}
+
+	private int duration(Properties props) throws ConfigurationException {
+		int value;
+		String valueString;
+		valueString = props.getProperty("duration");
+		if (valueString == null) {
+			throw new ConfigurationException("duration");
+		}
+		value = Integer.parseInt(valueString);
+		if (value <= 0) {
+			throw new ConfigurationException("duration > 0");
+		}
+		if ((value % getInterval()) != 0) {
+			throw new ConfigurationException("duration % interval");
+		}
+		return value;
+	}
+
+	private int monitorInterval(Properties props) throws ConfigurationException {
+		String valueString;
+		int value;
+
+		valueString = props.getProperty("interval");
+		if (valueString == null) {
+			throw new ConfigurationException("monitor interval");
+		}
+		value = Integer.parseInt(valueString);
+		if (value <= 0) {
+			throw new ConfigurationException("monitor interval > 0");
+		}
+		return value;
+	}
+
+	public int getDeparture() {
+		return getData().departure;
+	}
+
+	public void setDeparture(int departure) {
+		this.getData().departure = departure;
+	}
+
+	public int getDuration() {
+		return getData().duration;
+	}
+
+	public void setDuration(int duration) {
+		this.getData().duration = duration;
+	}
+
+	public int getInterval() {
+		return getData().interval;
+	}
+
+	public void setInterval(int interval) {
+		this.getData().interval = interval;
+	}
+
+	private ConfigurationData getData() {
+		return data;
+	}
+
+	private void setData(ConfigurationData data) {
+		this.data = data;
+	}
+}

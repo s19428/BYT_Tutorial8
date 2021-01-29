@@ -1,0 +1,38 @@
+
+public class WinnerManager {
+
+	public char winner(TicTacToe ticTacToe) {
+		// check for horizontal winner
+		checkForHorizontalWinner(ticTacToe);
+	
+		// check for vertical winner
+		for (int i = 0; i < 3; ++i) {
+			if (ticTacToe.board.charAt(i) != '-'
+					&& ticTacToe.board.charAt(i + 3) == ticTacToe.board.charAt(i)
+					&& ticTacToe.board.charAt(i + 6) == ticTacToe.board.charAt(i))
+				return ticTacToe.board.charAt(i);
+		}
+	
+		// check for diagonal winner
+		if (ticTacToe.board.charAt(0) != '-' && ticTacToe.board.charAt(4) == ticTacToe.board.charAt(0)
+				&& ticTacToe.board.charAt(8) == ticTacToe.board.charAt(0))
+			return ticTacToe.board.charAt(0);
+		if (ticTacToe.board.charAt(2) != '-' && ticTacToe.board.charAt(4) == ticTacToe.board.charAt(2)
+				&& ticTacToe.board.charAt(6) == ticTacToe.board.charAt(2))
+			return ticTacToe.board.charAt(2);
+	
+		// no winner yet
+		return '-';
+	}
+
+	private char checkForHorizontalWinner(TicTacToe ticTacToe) {
+		for (int i = 0; i < 9; i += 3) {
+			if (ticTacToe.board.charAt(i) != '-'
+					&& ticTacToe.board.charAt(i + 1) == ticTacToe.board.charAt(i)
+					&& ticTacToe.board.charAt(i + 2) == ticTacToe.board.charAt(i))
+				return ticTacToe.board.charAt(i);
+		}
+		return '-';
+	}
+
+}

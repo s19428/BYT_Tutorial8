@@ -1,0 +1,15 @@
+ex 01:
+    some parts of match() method are moved to separate methods
+ex 02:
+    load method divided into separate methods, enfields encapsulated, moved to a nested class
+ex 03:
+    fields moved to a separate class and encapsulated
+ex 04:
+    all methods from ClientX classes are npw accessible through delegate methods in Person class, 
+    those methods do no take Paerson instance as a parameter - instead they work directly on specific Person, 
+    Person fileds encapsulated
+ex 05:
+    bodies of all methods are moved to separate classes to comply with single responsibility principal
+ex 06:
+    bodies of methods moved to separate classes to comply with single responsibility principal (delegate methods stayed on place),
+    winner() methods in WinnerManager clas divieded into several methods

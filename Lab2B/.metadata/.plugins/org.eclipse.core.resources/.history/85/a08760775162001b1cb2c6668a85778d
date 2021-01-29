@@ -1,0 +1,17 @@
+
+import java.io.*;
+
+
+public class Client3 extends Person {
+	
+	public void display(Writer out) throws IOException {
+		out.write(last);
+		out.write(", ");
+		out.write(first);
+		if (middle != null) {
+			out.write(" ");
+			out.write(middle);
+		}
+	}
+
+}

@@ -1,0 +1,5 @@
+1611868365928	Rename field 'owner'
+1611869442518	Extract interface 'IOwnable'
+1611869720868	Extract method 'extracted'
+1611869918069	Extract local variable 'colorGroup'
+1611870255175	Change method 'playAction'

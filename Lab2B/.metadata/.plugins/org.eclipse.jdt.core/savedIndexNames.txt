@@ -1,0 +1,15 @@
+INDEX VERSION 1.131+D:\Academy\BYT\Tutorial8\Lab2B\.metadata\.plugins\org.eclipse.jdt.core
+2789785480.index
+3450334605.index
+3958037290.index
+4292316145.index
+4252824437.index
+2516264807.index
+1919784609.index
+3148742939.index
+2892353955.index
+113558702.index
+4285574927.index
+3368329768.index
+1961493941.index
+2101937810.index

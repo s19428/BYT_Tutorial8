@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+D:\Academy\BYT\Tutorial8\Tut8_Implementation\.metadata\.plugins\org.eclipse.jdt.core
+3919184572.index

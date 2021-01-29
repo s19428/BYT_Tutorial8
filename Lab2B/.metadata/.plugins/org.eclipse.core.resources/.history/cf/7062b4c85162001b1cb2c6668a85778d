@@ -1,0 +1,6 @@
+
+import java.io.*;
+
+public class Client1 extends Person {
+
+}

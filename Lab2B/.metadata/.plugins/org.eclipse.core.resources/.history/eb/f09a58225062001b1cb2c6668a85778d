@@ -1,0 +1,42 @@
+public class Expression {
+
+	public static class ExpressionData {
+		public char op;
+		public Expression left;
+		public Expression right;
+		public int constant;
+
+		public ExpressionData() {
+		}
+	}
+
+	private ExpressionData data = new ExpressionData();
+
+	public Expression(int constant) {
+		this.data.op = 'c';
+		this.data.constant = constant;
+	}
+
+	public Expression(char op, Expression left, Expression right) {
+		this.data.op = op;
+		this.data.left = left;
+		this.data.right = right;
+	}
+
+	public int evaluate() {
+		switch (data.op) {
+		case 'c':
+			return data.constant;
+		case '+':
+			return data.left.evaluate() + data.right.evaluate();
+		case '-':
+			return data.left.evaluate() - data.right.evaluate();
+		case '*':
+			return data.left.evaluate() * data.right.evaluate();
+		case '/':
+			return data.left.evaluate() / data.right.evaluate();
+		default:
+			throw new IllegalStateException();
+		}
+	}
+}
